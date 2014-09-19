@@ -1,12 +1,12 @@
 package ru.simsonic.rscPermissions.DataTypes;
+import java.sql.Timestamp;
 
 public class RowEntity extends AbstractRow
 {
 	public enum EntityType
 	{
-		groupName(0),
-		playerName(1),
-		playerUniqueId(2),
+		group(0),
+		player(1),
 		unknown(-1);
 		public static EntityType byValue(int value)
 		{
@@ -25,6 +25,7 @@ public class RowEntity extends AbstractRow
 	public EntityType entity_type;
 	public String prefix;
 	public String suffix;
+	public Timestamp lifetime;
 	@Override
 	public Table getTable()
 	{

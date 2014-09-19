@@ -32,7 +32,7 @@ public class LocalCacheData
 			return 0;
 		for(RowEntity row : rows)
 		{
-			if(row.entity_type == EntityType.groupName)
+			if(row.entity_type == EntityType.group)
 				entities_g.put(row.entity.toLowerCase(), row);
 			else
 				entities_u.put(row.entity.toLowerCase(), row);
@@ -47,7 +47,7 @@ public class LocalCacheData
 			return 0;
 		for(RowPermission row : rows)
 		{
-			if(row.entity_type == EntityType.groupName)
+			if(row.entity_type == EntityType.group)
 				permissions_p2g.add(row);
 			else
 				permissions_p2u.add(row);
@@ -62,7 +62,7 @@ public class LocalCacheData
 			return 0;
 		for(RowInheritance row : rows)
 		{
-			if(row.child_type == EntityType.groupName)
+			if(row.child_type == EntityType.group)
 				inheritance_g2g.add(row);
 			else
 				inheritance_g2u.add(row);
@@ -77,7 +77,7 @@ public class LocalCacheData
 			return 0;
 		for(RowLadder row : rows)
 		{
-			if(row.climber_type == EntityType.groupName)
+			if(row.climber_type == EntityType.group)
 				ladders_g.add(row);
 			else
 				ladders_u.add(row);	

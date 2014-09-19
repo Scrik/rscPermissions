@@ -135,6 +135,7 @@ public class BackendMySQL extends ConnectionMySQL implements Backend
 				row.entity_type = EntityType.byValue(rs.getInt("entity_type"));
 				row.prefix = rs.getString("prefix");
 				row.suffix = rs.getString("suffix");
+				row.lifetime = rs.getTimestamp("lifetime");
 				result.add(row);
 			}
 			rs.close();

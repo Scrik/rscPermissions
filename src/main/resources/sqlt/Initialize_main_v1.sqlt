@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS `{DATABASE}`.`{PREFIX}entities` (
 	`entity_type` TINYINT(1)  NOT NULL,
 	`prefix`      VARCHAR(48) DEFAULT NULL,
 	`suffix`      VARCHAR(48) DEFAULT NULL,
+	`lifetime`    TIMESTAMP NULL DEFAULT NULL,
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `id_UNIQUE` (`id`),
 	UNIQUE KEY `entity_UNIQUE` (`entity`, `entity_type`)
@@ -46,19 +47,6 @@ CREATE TABLE IF NOT EXISTS `{DATABASE}`.`{PREFIX}ladders` (
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `id_UNIQUE` (`id`),
 	UNIQUE KEY `climber_UNIQUE` (`climber`, `climber_type`, `ladder`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET='utf8' COLLATE 'utf8_general_ci';
-
-CREATE TABLE IF NOT EXISTS `{DATABASE}`.`{PREFIX}servers` (
-	`serverid`                       VARCHAR(48) NOT NULL,
-	`plugin_version`                 VARCHAR(16) DEFAULT NULL,
-	`settings_default-group`         VARCHAR(64) NOT NULL DEFAULT 'Default',
-	`settings_treat-asterisk-as-op`  BIT(1) NOT NULL DEFAULT b'1',
-	`settings_auto-reload-delay-sec` INT(10) UNSIGNED NOT NULL DEFAULT '900',
-	`settings_maintenance-mode`      VARCHAR(64) DEFAULT NULL,
-	`settings_enable-rewards`        BIT(1) NOT NULL DEFAULT b'0',
-	`internal_version`               TINYINT(2) UNSIGNED NOT NULL DEFAULT '1',
-	PRIMARY KEY (`serverid`),
-	UNIQUE KEY `serverid_UNIQUE` (`serverid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET='utf8' COLLATE 'utf8_general_ci';
 
 /* Merged updates 0.1a -> 0.5.9b -> 0.6b -> 0.7.5 */
